@@ -79,6 +79,7 @@
 
     &__search {
         flex: 1 1 auto;
+        padding-right: rem(20);
         @include adaptiveValue("padding-left", 158, 20);
     }
 
@@ -142,9 +143,11 @@
     }
 
     &__favorite {
+        font-size: rem(27);
     }
 
     &__cart {
+        flex: 0 0 auto;
     }
 }
 .phones-header {
@@ -153,32 +156,86 @@
     }
 
     &__item {
+        position: relative;
+        display: flex;
     }
 
     &__phone {
+        font-weight: 600;
+        flex-wrap: nowrap;
+        line-height: math.div(22, 18);
     }
 
     &__arrow {
+        color: $mainOrange;
+        font-size: rem(10);
+        margin: 0px 0px 0px em(17, 16);
+        transition: all 0.3s ease 0s;
+        &._spoller-active {
+            transform: rotate(-180deg);
+        }
     }
 
     &__list {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        margin: rem(5) 0px 0px 0px;
+        border-radius: rem(10);
+        background: #fff;
+        padding: rem(12);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
+        li {
+            &:not(:last-child) {margin-bottom: em(13, 18);}
+        }
     }
 
     &__callback {
+        margin: rem(3) 0px 0px 0px;
+        font-weight: 700;
+        line-height: math.div(22, 18);
+        color: $mainOrange;
     }
 }
 .cart-header {
+    display: flex;
+    column-gap: 15px;
+    align-items:center;
 
     &__icon {
+        flex: 0 0 37px;
+        font-size: rem(35);
+        position: relative;
+        span {
+            position: absolute;
+            width: rem(15);
+            height: rem(14);
+            background-color: $mainOrange;
+            font-size: rem(8);
+            border-radius: 50%;
+            display: flex;
+            top: 0;
+            right: 0;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &__body {
+        line-height: math.div(20, 16);
+        font-size: rem(16);
+        flex: 0 0 auto;
     }
 
     &__summ {
+        font-weight: 500;
+        &:not(:last-child) {margin-bottom: em(5, 16);}
     }
 
     &__link {
+        color: $mainOrange;
     }
 }
 
