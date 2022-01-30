@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Верстка «NEW_PROJECT_NAME»</title>
+		<title>Верстка «Knives layout»</title>
 	</head>
 	<body>
 		<div class="rootpage">
-			<h1>Верстка «NEW_PROJECT_NAME»</h1>
+			<h1>Верстка «Knives layout»</h1>
 			<div class="rootpage__info">
 				Особенности проекта
 			</div>
@@ -21,12 +21,12 @@
 			</ol>
 			<div class="rootpage__tnx">
 				<h2>Спасибо за заказ!</h2>
-				<p>Буду рад (а) хорошему отзыву.</p>
+				<p>Буду рад хорошему отзыву.</p>
 				<p>Обращайтесь еще!</p>
 			</div>
 			<div class="rootpage__contacts">
 				<h2>Мои контакты:</h2>
-				<p>Почта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
+				<p>Почта: <a href="mailto:sasha12121299@gmail.com">sasha12121299@gmail.com</a></p>
 				<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
 				<p>Соц. сеть: <a href="">ссылка на соц. сеть</a></p>
 			</div>
@@ -47,22 +47,23 @@
 			padding: 0;
 			min-width: 320px;
 			width: 100%;
-			color: #fff;
-			background-color: #5e5373;
+			color: rgb(255, 255, 255);
+			background: linear-gradient(45deg, #a1ffce, #f9ffd1);;
 		}
 		body {
 			font-family: Montserrat;
 			font-size: 100%;
 			line-height: 1;
 			font-size: 1rem;
+            color: black;
 		}
 		a {
 			text-decoration: underline;
-			color: #ebe691
+			color: #2c2c29
 		}
 		a:visited {
 			text-decoration: underline;
-			color: #aaa768;
+			color: #20201c;
 		}
 			a:hover {
 			text-decoration: none;
@@ -82,7 +83,9 @@
 			padding: 30px;
 			display: flex;
 			flex-direction: column;
-			align-items: flex-start;
+			align-items: center;
+            text-align: center;
+			/* align-items: flex-start; */
 		}
 		@media (max-width: 767px) {
 			.rootpage{
@@ -90,7 +93,7 @@
 			}
 		}
 		h1 {
-			color: #ebe691;
+			color: #3d423f;
 			font-size: 2.5rem;
 			margin: 0px 0px 1.25rem 0px;
 		}
@@ -101,7 +104,7 @@
 			}
 		}
 		h2 {
-			color: #ebe691;
+			color: #3d423f;
 			font-size: 1.25rem;
 			margin: 0px 0px 1rem 0px;
 		}
@@ -136,15 +139,26 @@
 		}
 		}
 		.rootpage__contacts{
-			background: #32b5a4;
-			
+			background: linear-gradient(45deg, #475d61, #c3cfe2);
+            transition: all 0.3s ease 0s;
+            border: 1px solid #000;
 		}
 		.rootpage__contacts a{
-			color: #ebe691;
+			color: #3d423f;
 		}
+        /* .rootpage__contacts:hover {
+            background: rgb(128, 149, 136);
+            border-top-left-radius: 8px;
+        } */
 		.rootpage__tnx{
-			background: #c22d63;
+			background: linear-gradient(45deg, #b59ec7, #506594);;
 			margin: 0px 0px 1rem 0px;
+            transition: all 0.3s ease 0s;
+            border: 1px solid #000;
 		}
+        /* .rootpage__tnx:hover{
+            background: rgb(54, 35, 75);
+            border-top-right-radius: 8px;
+        } */
 	</style>
 </html>
