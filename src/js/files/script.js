@@ -18,7 +18,7 @@ function setNumberOfColls () {
 
 function documentActions(e) {
     setNumberOfColls();
-    e.preventDefault();
+    // e.preventDefault();
     const activeLink = document.querySelector('._sub-menu-active');
     const activeBlock = document.querySelector('._sub-menu-open');
     const targetElem = e.target;
@@ -31,9 +31,11 @@ function documentActions(e) {
             subMenu.closest('div').style.cssText = `grid-template-columns: repeat(${cols}, 0.${cols}fr);`;
 
             if (activeLink && activeLink !== targetElem) {
+                document.documentElement.classList.remove('sub-menu-open');
                 activeLink.classList.remove('_sub-menu-active');
                 activeBlock.classList.remove('_sub-menu-open');
             }
+            document.documentElement.classList.toggle('sub-menu-open');
             targetElem.classList.toggle('_sub-menu-active');
             subMenu.classList.toggle('_sub-menu-open');
         }
@@ -49,4 +51,24 @@ function documentActions(e) {
     //     activeLink.classList.remove('_sub-menu-active');
     //     activeBlock.classList.remove('_sub-menu-open');
     // }
+
+    if (targetElem.closest('.menu-top-header__link_catalog')) {
+        // const catalogLink = targetElem.closest('.menu-top-header__link_catalog');
+        document.documentElement.classList.add('catalog-open');
+        e.preventDefault();
+    }
+    if (targetElem.closest('.menu-catalog__back')) {
+        document.documentElement.classList.remove('catalog-open');
+        document.documentElement.classList.remove('sub-catalog-open');
+
+        document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
+        document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
+        e.preventDefault();        
+    } 
+    if (targetElem.closest('.sub-menu-catalog__back'))  {
+        document.documentElement.classList.remove('sub-menu-open');
+        document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
+        document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
+        e.preventDefault(); 
+    }
 }
